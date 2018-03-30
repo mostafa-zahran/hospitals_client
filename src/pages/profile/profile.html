@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title ion-grid>
+      Profile
+      <button float-right ion-button type="submit" (click)="openSignin()" *ngIf="canSignin()">Sign In</button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveUser()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.first_name" name="first_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.last_name" name="last_name"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Save</button>
+  </form>
+</ion-content>
