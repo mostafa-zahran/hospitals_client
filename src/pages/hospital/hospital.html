@@ -21,6 +21,7 @@
       <ion-card-content>
         <p>Phone: {{hospital.phone}}</p>
         <p>Address: {{hospital.address}}</p>
+        <button float-right ion-button (click)="openMaps(hospital)">Navigate</button>
       </ion-card-content>
   </ion-card>
 </ion-content>

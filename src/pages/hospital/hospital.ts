@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
-import { HospitalsProvider } from "../../providers/hospitals/hospitals";
-import { DepartmentPage } from "../department/department";
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {HospitalsProvider} from "../../providers/hospitals/hospitals";
+import {DepartmentPage} from "../department/department";
+import { Platform } from 'ionic-angular';
 
 /**
  * Generated class for the HospitalPage page.
@@ -16,11 +17,11 @@ import { DepartmentPage } from "../department/department";
 })
 export class HospitalPage {
 
-  search_params:any;
-  hospitals:any;
+  search_params: any;
+  hospitals: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public hospitalsProvider: HospitalsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public hospitalsProvider: HospitalsProvider, public platform: Platform) {
     this.search_params = navParams.get('choice');
     this.getHospitals();
   }
@@ -34,5 +35,15 @@ export class HospitalPage {
 
   hospitalTapped(event, selected_hospital) {
     this.navCtrl.push(DepartmentPage, {choice: {hospital_id: selected_hospital.id}});
+  }
+
+  openMaps(hospital) {
+    let destination = hospital.lat + ',' + hospital.lng;
+    if (this.platform.is('ios')) {
+      window.open('maps://?q=' + destination, '_system');
+    } else {
+      let label = encodeURI('Hospital');
+      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
+    }
   }
 }
