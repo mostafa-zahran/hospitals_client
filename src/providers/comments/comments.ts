@@ -14,7 +14,7 @@ export class CommentsProvider {
 
   header: HttpHeaders;
 
-  constructor(public http: HttpClient, public api_token: Constants.ApiToken) {
+  constructor(public http: HttpClient, public api_token: Constants.UserPrefs) {
     this.header = new HttpHeaders({'access_key': Constants.accessKey, 'api_token' : api_token.apiToken});
   }
 

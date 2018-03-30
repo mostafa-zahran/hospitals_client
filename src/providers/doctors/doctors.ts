@@ -14,7 +14,7 @@ export class DoctorsProvider {
 
   header: HttpHeaders;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public api_token: Constants.UserPrefs) {
     this.header = new HttpHeaders({'access_key': Constants.accessKey});
   }
 

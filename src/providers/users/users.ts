@@ -14,7 +14,7 @@ export class UsersProvider {
   header: HttpHeaders;
   user: any;
 
-  constructor(public http: HttpClient, public api_token: Constants.ApiToken) {
+  constructor(public http: HttpClient, public api_token: Constants.UserPrefs) {
     this.user = {email: '', first_name: '', last_name: '', api_token: '', id: 0};
     this.header = new HttpHeaders({'access_key': Constants.accessKey, 'api_token' : api_token.apiToken});
   }

@@ -14,7 +14,7 @@ export class SessionsProvider {
   header: HttpHeaders;
   user: any;
 
-  constructor(public http: HttpClient, public api_token: Constants.ApiToken) {
+  constructor(public http: HttpClient, public api_token: Constants.UserPrefs) {
     this.user = {api_token: ''};
     this.header = new HttpHeaders({'access_key': Constants.accessKey});
   }

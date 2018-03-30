@@ -18,7 +18,7 @@ import { DoctorsProvider } from '../providers/doctors/doctors';
 import { CommentsProvider } from '../providers/comments/comments';
 import { SessionsProvider } from '../providers/sessions/sessions';
 import { UsersProvider } from '../providers/users/users';
-import { ApiToken } from "../providers/constants";
+import { UserPrefs } from "../providers/constants";
 import { SigninPage } from "../pages/signin/signin";
 import { HospitalPage } from "../pages/hospital/hospital";
 import { DepartmentPage } from "../pages/department/department"
@@ -66,7 +66,7 @@ import { CommentPage } from "../pages/comment/comment";
     CommentsProvider,
     SessionsProvider,
     UsersProvider,
-    ApiToken
+    UserPrefs
   ]
 })
 export class AppModule {}
