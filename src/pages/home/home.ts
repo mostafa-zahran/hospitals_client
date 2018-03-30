@@ -37,6 +37,6 @@ export class HomePage {
   }
 
   goToHospitals() {
-    this.navCtrl.push(HospitalPage);
+    this.navCtrl.push(HospitalPage, {choice: this.choice});
   }
 }

@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Departments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let department of departments" (click)="departmentTapped($event, department)">
+      {{department.en_name}}
+    </button>
+  </ion-list>
+</ion-content>
