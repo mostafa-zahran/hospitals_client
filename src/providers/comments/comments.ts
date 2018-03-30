@@ -14,8 +14,8 @@ export class CommentsProvider {
 
   header: HttpHeaders;
 
-  constructor(public http: HttpClient) {
-    this.header = new HttpHeaders({'access_key': Constants.accessKey});
+  constructor(public http: HttpClient, public api_token: Constants.ApiToken) {
+    this.header = new HttpHeaders({'access_key': Constants.accessKey, 'api_token' : api_token.apiToken});
   }
 
   getComments(data) {
@@ -40,7 +40,8 @@ export class CommentsProvider {
 
   createComment(data) {
     return new Promise((resolve, reject) => {
-      this.http.post(Constants.apiUrl+'comments', JSON.stringify(data), {headers: this.header})
+      this.header = new HttpHeaders({'access_key': Constants.accessKey, 'api_token' : this.api_token.apiToken});
+      this.http.post(Constants.apiUrl+'comments', {comment: data}, {headers: this.header})
         .subscribe(res => {
           resolve(res);
         }, (err) => {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DoctorsProvider } from "../../providers/doctors/doctors";
+import { CommentPage } from "../comment/comment";
 
 
 /**
@@ -32,6 +33,6 @@ export class DoctorPage {
   }
 
   doctorTapped(event, selected_doctor){
-    //this.navCtrl.push(CommentPage, {choice: {doctor_id: selected_doctor.id}});
+    this.navCtrl.push(CommentPage, {choice: {doctor_id: selected_doctor.id}});
   }
 }

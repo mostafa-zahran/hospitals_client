@@ -23,6 +23,7 @@ import { SigninPage } from "../pages/signin/signin";
 import { HospitalPage } from "../pages/hospital/hospital";
 import { DepartmentPage } from "../pages/department/department"
 import { DoctorPage } from "../pages/doctor/doctor";
+import { CommentPage } from "../pages/comment/comment";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DoctorPage } from "../pages/doctor/doctor";
     SigninPage,
     HospitalPage,
     DepartmentPage,
-    DoctorPage
+    DoctorPage,
+    CommentPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { DoctorPage } from "../pages/doctor/doctor";
     SigninPage,
     HospitalPage,
     DepartmentPage,
-    DoctorPage
+    DoctorPage,
+    CommentPage
   ],
   providers: [
     StatusBar,
