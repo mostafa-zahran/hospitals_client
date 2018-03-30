@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DepartmentsProvider } from "../../providers/departments/departments";
+import { DoctorPage } from "../doctor/doctor";
 
 /**
  * Generated class for the DepartmentPage page.
@@ -31,6 +32,6 @@ export class DepartmentPage {
   }
 
   departmentTapped(event, selected_department) {
-    //this.navCtrl.push(DoctorPage, {choice: {department_id: selected_department.id}});
+    this.navCtrl.push(DoctorPage, {choice: {department_id: selected_department.id}});
   }
 }

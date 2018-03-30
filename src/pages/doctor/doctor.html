@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Doctors</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let doctor of doctors" (click)="doctorTapped($event, doctor)">
+    <img [src]="doctor.image_url"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{doctor.name}}
+      </ion-card-title>
+      <p>{{doctor.en_bio}}</p>
+      <p>{{doctor.en_schedule}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

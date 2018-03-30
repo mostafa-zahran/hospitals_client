@@ -22,6 +22,7 @@ import { ApiToken } from "../providers/constants";
 import { SigninPage } from "../pages/signin/signin";
 import { HospitalPage } from "../pages/hospital/hospital";
 import { DepartmentPage } from "../pages/department/department"
+import { DoctorPage } from "../pages/doctor/doctor";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DepartmentPage } from "../pages/department/department"
     TabsPage,
     SigninPage,
     HospitalPage,
-    DepartmentPage
+    DepartmentPage,
+    DoctorPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { DepartmentPage } from "../pages/department/department"
     TabsPage,
     SigninPage,
     HospitalPage,
-    DepartmentPage
+    DepartmentPage,
+    DoctorPage
   ],
   providers: [
     StatusBar,
