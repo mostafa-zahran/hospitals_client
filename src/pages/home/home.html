@@ -8,7 +8,7 @@
   <ion-row>
     <ion-col>
       <ion-select [(ngModel)]="choice.governorate_id">
-        <ion-option *ngFor="let governorate of governorates" [value]="governorate.id">{{governorate.en_name}}
+        <ion-option *ngFor="let governorate of governorates" [value]="governorate.id">{{governorate.name}}
         </ion-option>
       </ion-select>
     </ion-col>
@@ -16,7 +16,7 @@
   <ion-row>
     <ion-col>
       <ion-select [(ngModel)]="choice.specialty_id">
-        <ion-option *ngFor="let specialty of specialties" [value]="specialty.id">{{specialty.en_name}}
+        <ion-option *ngFor="let specialty of specialties" [value]="specialty.id">{{specialty.name}}
         </ion-option>
       </ion-select>
     </ion-col>

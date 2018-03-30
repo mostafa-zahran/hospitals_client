@@ -21,16 +21,7 @@ export class HospitalsProvider {
   getHospitals(data) {
     return new Promise(resolve => {
       this.http.get(Constants.apiUrl+'hospitals', {params: data, headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
-  getHospital(hospital_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'hospitals/'+ hospital_id, {headers: this.header}).subscribe(data => {
+        data = Constants.translate(['name'], data, this.api_token.lang);
         resolve(data);
       }, err => {
         console.log(err);

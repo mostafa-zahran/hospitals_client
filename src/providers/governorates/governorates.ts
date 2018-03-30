@@ -20,16 +20,7 @@ export class GovernoratesProvider {
   getGovernorates() {
     return new Promise(resolve => {
       this.http.get(Constants.apiUrl+'governorates',{headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
-  getGovernorate(governorate_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'governorates/'+ governorate_id,{headers: this.header}).subscribe(data => {
+        data = Constants.translate(['name'], data, this.api_token.lang);
         resolve(data);
       }, err => {
         console.log(err);

@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Select Language</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let lan of langs" (click)="setLang($event, lan.value)">
+      {{lan.title}}
+    </button>
+  </ion-list>
+</ion-content>

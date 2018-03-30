@@ -28,16 +28,6 @@ export class CommentsProvider {
     });
   }
 
-  getComment(comment_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'comments/'+ comment_id, {headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
   createComment(data) {
     return new Promise((resolve, reject) => {
       this.header = new HttpHeaders({'access_key': Constants.accessKey, 'api_token' : this.api_token.apiToken});

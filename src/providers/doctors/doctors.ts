@@ -21,21 +21,11 @@ export class DoctorsProvider {
   getDoctors(data) {
     return new Promise(resolve => {
       this.http.get(Constants.apiUrl+'doctors', {params: data, headers: this.header}).subscribe(data => {
+        data = Constants.translate(['name', 'bio', 'schedule'], data, this.api_token.lang);
         resolve(data);
       }, err => {
         console.log(err);
       });
     });
   }
-
-  getDoctor(doctor_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'doctors/'+ doctor_id, {headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
 }

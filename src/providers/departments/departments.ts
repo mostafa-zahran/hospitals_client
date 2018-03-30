@@ -21,21 +21,11 @@ export class DepartmentsProvider {
   getDepartments(data) {
     return new Promise(resolve => {
       this.http.get(Constants.apiUrl+'departments', {params: data, headers: this.header}).subscribe(data => {
+        data = Constants.translate(['name'], data, this.api_token.lang);
         resolve(data);
       }, err => {
         console.log(err);
       });
     });
   }
-
-  getDepartment(department_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'departments/'+ department_id, {headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
 }

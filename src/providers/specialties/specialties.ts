@@ -20,16 +20,7 @@ export class SpecialtiesProvider {
   getSpecialties() {
     return new Promise(resolve => {
       this.http.get(Constants.apiUrl+'specialties', {headers: this.header}).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-
-  getSpecialty(specialty_id) {
-    return new Promise(resolve => {
-      this.http.get(Constants.apiUrl+'specialties/'+ specialty_id, {headers: this.header}).subscribe(data => {
+        data = Constants.translate(['name'], data, this.api_token.lang);
         resolve(data);
       }, err => {
         console.log(err);

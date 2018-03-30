@@ -16,7 +16,7 @@
 <ion-content padding>
   <ion-card *ngFor="let hospital of hospitals" (click)="hospitalTapped($event, hospital)">
       <ion-card-header>
-        {{hospital.en_name}}
+        {{hospital.name}}
       </ion-card-header>
       <ion-card-content>
         <p>Phone: {{hospital.phone}}</p>

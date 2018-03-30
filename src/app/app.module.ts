@@ -24,6 +24,7 @@ import { HospitalPage } from "../pages/hospital/hospital";
 import { DepartmentPage } from "../pages/department/department"
 import { DoctorPage } from "../pages/doctor/doctor";
 import { CommentPage } from "../pages/comment/comment";
+import { LangPage } from "../pages/lang/lang";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CommentPage } from "../pages/comment/comment";
     HospitalPage,
     DepartmentPage,
     DoctorPage,
-    CommentPage
+    CommentPage,
+    LangPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { CommentPage } from "../pages/comment/comment";
     HospitalPage,
     DepartmentPage,
     DoctorPage,
-    CommentPage
+    CommentPage,
+    LangPage
   ],
   providers: [
     StatusBar,
